@@ -49,10 +49,10 @@ onTap(String  value) {
 ```
 
 
-Take me to [pookie](#pookie)
+this code snippet is extension of ["counting character length:"](#pookie)
 
 ```Dart
-[this code snippet is extension of  ]
+
 onChanged(String  value) {
 	setState(() {
 		charLength  =  value.length;
@@ -74,3 +74,5 @@ onChanged(String  value) {
 	);
 }
 ```
+
+# updating.......
