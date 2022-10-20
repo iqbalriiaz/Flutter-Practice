@@ -84,11 +84,6 @@ class _LoginDemoState extends State<LoginDemo> {
     });
   }
 
-  // @override
-  // void initState() {
-  //   passwordVisible = false;
-  // }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
