@@ -1,4 +1,4 @@
-# login_and_lottie_animation
+# login_animation
 
 A new Flutter project.
 
