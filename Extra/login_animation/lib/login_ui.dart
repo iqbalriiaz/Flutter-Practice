@@ -14,7 +14,7 @@ class _LoginDemoState extends State<LoginDemo> {
   final TextEditingController passwordController = TextEditingController();
 
   int charLength = 0;
-  bool value = false;
+  bool val = false;
   bool _obscureText = true;
 
   void _toggle() {
@@ -179,10 +179,10 @@ class _LoginDemoState extends State<LoginDemo> {
                         child: Row(
                           children: [
                             Checkbox(
-                                value: value,
+                                value: val,
                                 onChanged: (value) {
                                   setState(() {
-                                    if (this.value = value!) {
+                                    if (val = value!) {
                                       _toggle();
                                       onTap('images/password_show.png');
                                     } else {
