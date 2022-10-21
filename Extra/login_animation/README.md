@@ -78,3 +78,11 @@ onChanged(String  value) {
 	);
 }
 ```
+
+## Issues:
+
+- [Animation] When opening the app for the first time, a flicker is seen while loading the images. 
+
+## Possible Solutions: 
+
+- <strong>PreCashedImage</strong> can be an option to solve this.
