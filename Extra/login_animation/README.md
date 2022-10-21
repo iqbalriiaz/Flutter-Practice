@@ -15,7 +15,7 @@
 ## My Approach
 
 1. <b>Animation:</b>  <br>The animation 'Yeti' is a combination of several photos. I've taken around 27 screenshots of different frames.
-The animation can be found here:  [Click it](https://codepen.io/tsouhaieb/pen/zVrxNe "codepen.io").
+The animation can be found here:  [codepen.io/tsouhaieb/pen/zVrxNe](https://codepen.io/tsouhaieb/pen/zVrxNe "codepen.io").
 
 2. <b>Animation on email character input :</b>  <br>So here's basically I've counted the character length and changed the images sequentially [through conditions],  which created an animation effect.
 
