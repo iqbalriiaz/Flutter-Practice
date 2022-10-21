@@ -85,4 +85,4 @@ onChanged(String  value) {
 
 ## Possible Solutions: 
 
-- <strong>PreCashedImage</strong> can be an option to solve this.
+- <strong>PreCachedImage</strong> can be an option to solve this.
