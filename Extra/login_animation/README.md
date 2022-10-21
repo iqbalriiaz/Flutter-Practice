@@ -65,6 +65,10 @@ onChanged(String  value) {
 		} 
 		  -----
 		  -----
+          -----
+		  -----
+          -----
+		  -----
 		  else  if (charLength  ==  22) {
 		  onTap('images/24.png');
 		  } else {
