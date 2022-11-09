@@ -30,6 +30,20 @@ class _HomePageState extends State<HomePage> {
     });
   }
 
+  _getFromCamera() async {
+    XFile? pickedFile = await ImagePicker().pickImage(
+      source: ImageSource.camera,
+      maxWidth: 1800,
+      maxHeight: 1800,
+    );
+    if (pickedFile != null) {
+      File imageFile = File(pickedFile.path);
+    }
+    setState(() {
+      imageFile = File(pickedFile!.path);
+    });
+  }
+
   add_Image() {
     return showModalBottomSheet(
         isScrollControlled: true,
@@ -69,7 +83,9 @@ class _HomePageState extends State<HomePage> {
                           borderRadius: BorderRadius.circular(50)),
                       padding: EdgeInsets.only(top: 40, left: 40, right: 40),
                       child: OutlinedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          _getFromCamera();
+                        },
                         child: Text(
                           'Pick from Camera',
                           style: TextStyle(color: Colors.white, fontSize: 22),
