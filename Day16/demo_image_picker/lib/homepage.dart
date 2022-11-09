@@ -1,6 +1,5 @@
 import 'dart:io';
 
-import 'package:demo_image_picker/addImage.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
@@ -31,8 +30,7 @@ class _HomePageState extends State<HomePage> {
     });
   }
 
-  @override
-  add_Course() {
+  add_Image() {
     return showModalBottomSheet(
         isScrollControlled: true,
         backgroundColor: Colors.transparent,
@@ -137,7 +135,7 @@ class _HomePageState extends State<HomePage> {
                             right: -25,
                             child: RawMaterialButton(
                               onPressed: () {
-                                add_Course();
+                                add_Image();
                               },
                               elevation: 2.0,
                               fillColor: Color(0xFFF5F6F9),
