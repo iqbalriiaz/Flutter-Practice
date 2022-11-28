@@ -1,9 +1,8 @@
-import 'package:firebase/firebase_classes/login.dart';
-import 'package:firebase/pages/home_page.dart';
 import 'package:firebase/pages/signup_page.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
+
+import '../firebase_classes/login.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -67,48 +66,12 @@ class _LoginPageState extends State<LoginPage> {
                 ElevatedButton(
                     onPressed: () async {
                       print("login button clicked");
-                      // var snackBar = SnackBar(
-                      //     content:
-                      //     Text('Registered with ${emailController.text}'));
-                      // ScaffoldMessenger.of(context).showSnackBar(snackBar);
-                      // FirebaseLogin fLogin = FirebaseLogin();
-                      // FirebaseAuthentication fAuth = FirebaseAuthentication();
+
                       var userEmail = emailController.text;
                       var userPassword = passwordController.text;
-                      // fLogin.login(userEmail, userPassword);
-                      // fAuth.signup(userEmail, userPassword);
-                      emailController.clear();
-                      passwordController.clear();
 
-                      UserCredential credential = await FirebaseAuth.instance
-                          .signInWithEmailAndPassword(
-                        email: userEmail,
-                        password: userPassword,
-                      );
-                      try {
-                        if (credential != null) {
-                          Navigator.pushReplacement(
-                              context,
-                              PageTransition(
-                                  type: PageTransitionType.leftToRight,
-                                  child: HomePage()));
-                        }
-                      } on FirebaseAuthException catch (e) {
-                        if (e.code == 'user-not-found') {
-                          var snackBar = SnackBar(
-                              content: Text("No user found for that email."));
-                          ScaffoldMessenger.of(context).showSnackBar(snackBar);
-                        } else if (e.code == 'wrong-password') {
-                          print('Wrong password provided for that user.');
-                        }
-                      }
-
-                      // else{
-                      //   var snackBar = SnackBar(
-                      //       content:
-                      //       Text("Your are not registered"));
-                      //   ScaffoldMessenger.of(context).showSnackBar(snackBar);
-                      // }
+                      FirebaseLogin fLogin = FirebaseLogin();
+                      fLogin.login(userEmail, userPassword, context);
                     },
                     child: Padding(
                       padding: const EdgeInsets.only(
