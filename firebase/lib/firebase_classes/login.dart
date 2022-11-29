@@ -8,6 +8,7 @@ import '../pages/home_page.dart';
 class FirebaseLogin {
   login(email, password, context ) async {
     try {
+
       UserCredential credential = await FirebaseAuth.instance
           .signInWithEmailAndPassword(
           email: email,
@@ -38,5 +39,8 @@ class FirebaseLogin {
         ScaffoldMessenger.of(context).showSnackBar(snackBar);
       }
     }
+
   }
+
+
 }

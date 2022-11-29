@@ -1,5 +1,8 @@
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
+import 'package:firebase/blog/details.dart';
+import 'package:firebase/blog/gallery.dart';
+import 'package:firebase/blog/popular.dart';
 import 'package:flutter/material.dart';
-import '../firebase_classes/signout.dart';
 
 
 class HomePage extends StatefulWidget {
@@ -11,32 +14,25 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
 
-
+final myPages = [Details(), Gallery(), Popular()];
+int indexPage = 0;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Text("Hello, You have logged in",style:
-              TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 30
-              ),),
 
-            ElevatedButton(onPressed: ()  {
-
-              signOut(context);
-
-            }, child: Text(
-              "Logout"
-            ))
-          ],
-        ),
+      bottomNavigationBar: CurvedNavigationBar(items: [
+        Icon(Icons.home, size: 30),
+        Icon(Icons.list, size: 30),
+        Icon(Icons.settings, size: 30),
+      ],
+        onTap: (index){
+        setState(() {
+          indexPage = index;
+        });
+        } ,
       ),
+      body: myPages[indexPage]
     );
   }
 }
