@@ -1,10 +1,8 @@
 import 'package:firebase/pages/signup_page.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 
 import '../firebase_classes/login.dart';
-import 'home_page.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -20,28 +18,9 @@ class _LoginPageState extends State<LoginPage> {
   @override
   void initState() {
     super.initState();
-    // var auth = FirebaseAuth.instance;
-    // auth.onAuthStateChanged.listen((user) {
-    //   if (user != null) {
-    //     print("user is logged in");
-    //     //navigate to home page using Navigator Widget
-    //   } else {
-    //     print("user is not logged in");
-    //     //navigate to sign in page using Navigator Widget
-    //   }
-    // });
 
-    FirebaseAuth.instance.authStateChanges().listen((User? user) {
-      if (user == null) {
-        print('User is currently signed out!');
-      } else {
-        print('User is signed in!');
-        Navigator.pushReplacement(
-            context,
-            PageTransition(
-                type: PageTransitionType.leftToRight, child: HomePage()));
-      }
-    });
+    FirebaseLogin fLogin = FirebaseLogin();
+    fLogin.checkUserState(context);
   }
 
   @override
